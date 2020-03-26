@@ -6,5 +6,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //
+    public function create()
+    {
+        $users = User::all();
+
+        return view('posts.create', [
+            'users' => $users
+        ]);
+    }
 }
