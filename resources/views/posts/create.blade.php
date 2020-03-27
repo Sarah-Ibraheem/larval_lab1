@@ -2,7 +2,8 @@
 @section('mainBlock')
 <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Create Post Form</h4>
-      <form method="post" action="" class="needs-validation" novalidate>
+      <form method="POST" action="{{route('posts.store')}}" class="needs-validation" novalidate>
+      @csrf
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Title</label>
