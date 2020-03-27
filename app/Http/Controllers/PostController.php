@@ -29,7 +29,7 @@ class PostController extends Controller
         ]);
 
         //redirect to /posts
-        return redirect()->route('posts.wel');
+        return redirect()->route('posts.index');
     }
 
     public function index()
