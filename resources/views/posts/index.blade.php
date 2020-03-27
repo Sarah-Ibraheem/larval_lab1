@@ -30,7 +30,7 @@
 								<td>{{$post->updated_at}}</td>
 								<td>{{$post->description}}</td>
             <td>
-              <button type="button" class="btn btn-primary">details</button>
+              <a href="{{route('posts.show',['post' => $post->id])}}" class="btn btn-primary">details</a>
               <button type="button" class="btn btn-success">update</button>
             <button type="button" class="btn btn-danger">delete</i></button>
             </td>
