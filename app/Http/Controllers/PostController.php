@@ -32,6 +32,15 @@ class PostController extends Controller
         return redirect()->route('posts.wel');
     }
 
+    public function index()
+    {
+        $posts = Post::all();
+
+        return view('posts.index', [
+            'posts' => $posts
+        ]);
+    }
+
 
     
 }
