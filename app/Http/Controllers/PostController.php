@@ -16,4 +16,22 @@ class PostController extends Controller
             'users' => $users
         ]);
     }
+
+    public function store()
+    {
+        $request = request();
+
+        //store the request data in the db
+        Post::create([
+            'title' => $request->title,
+            'description' =>  $request->description,
+            'user_id' =>  $request->user_id,
+        ]);
+
+        //redirect to /posts
+        return redirect()->route('posts.wel');
+    }
+
+
+    
 }
