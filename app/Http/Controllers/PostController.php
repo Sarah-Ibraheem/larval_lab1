@@ -69,11 +69,11 @@ class PostController extends Controller
         $postId = $request->post;
         $post = Post::find($postId);
         //store the request data in the db
-       $post->update([
-            'title' => $request->title,
-            'description' =>  $request->description,
-            'user_id' =>  $request->user_id,
-        ]);
+       $post->update(
+            // 'title' => $request->title,
+            // 'description' =>  $request->description,
+            // 'user_id' =>  $request->user_id,
+            $request->all());
 
         //redirect to /posts
         return redirect()->route('posts.index');
