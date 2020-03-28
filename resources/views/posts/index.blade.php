@@ -32,7 +32,7 @@
             <td>
               <a href="{{route('posts.show',['post' => $post->id])}}" class="btn btn-primary">details</a>
               <a href="{{route('posts.edit',['post'=>$post->id])}}" class="btn btn-success">update</a>
-              <!-- <a onclick="return confirm('Are you sure you want to delete this post?')" href="{{route('posts.destroy',['post'=>$post->id])}}" class="btn btn-danger">delete</a> -->
+              <a onclick="return confirm('Are you sure you want to delete this post?')" href="{{route('posts.destroy',['post'=>$post->id])}}" class="btn btn-danger">delete</a>
             
             </td>
           </tr>
