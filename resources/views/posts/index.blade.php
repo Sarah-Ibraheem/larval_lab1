@@ -31,8 +31,9 @@
 								<td>{{$post->description}}</td>
             <td>
               <a href="{{route('posts.show',['post' => $post->id])}}" class="btn btn-primary">details</a>
-              <button type="button" class="btn btn-success">update</button>
-            <button type="button" class="btn btn-danger">delete</i></button>
+              <a href="{{route('posts.edit',['post'=>$post->id])}}" class="btn btn-success">update</a>
+              <!-- <a onclick="return confirm('Are you sure you want to delete this post?')" href="{{route('posts.destroy',['post'=>$post->id])}}" class="btn btn-danger">delete</a> -->
+            
             </td>
           </tr>
         @endforeach
