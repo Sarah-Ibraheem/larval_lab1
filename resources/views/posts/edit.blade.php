@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('mainBlock')
+@section('content')
 <div class="col-md-8 order-md-1">
       <h4 class="mb-3">update Post Form</h4>
       <form method="POST" action="{{route('posts.update',['post'=>$post->id])}}" class="needs-validation" novalidate>

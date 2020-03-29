@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('mainBlock')
+@section('content')
 <div class="col-md-8 order-md-1">
 @if ($errors->any())
     <div class="alert alert-danger">

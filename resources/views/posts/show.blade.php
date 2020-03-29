@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('mainBlock')
+@section('content')
 <div class="container">
 
 <div class="row">
