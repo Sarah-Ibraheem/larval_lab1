@@ -13,7 +13,7 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
+                'title' => 'required|min:5',
+                'user_id' => 'required',
+                'description' =>'required|min:5'
+            
         ];
+    }
+
+    public function messages()
+    {
+        return['title.min'=> 'iti say please insert at least 5 characters for title',
+         'description.min'=> 'iti say please insert at least 5 characters for desc'];
     }
 }
