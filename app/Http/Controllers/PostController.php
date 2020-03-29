@@ -21,7 +21,12 @@ class PostController extends Controller
     {
         $request = request();
 
-        //store the request data in the db
+        $validatedData = $request->validate([
+            '$request->title' => 'required|min:5',
+            '$request->user_id' => 'required',
+            '$request->description' =>'required'
+        ]);
+        
         Post::create([
             'title' => $request->title,
             'description' =>  $request->description,
