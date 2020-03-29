@@ -22,11 +22,12 @@ class PostController extends Controller
         $request = request();
 
         $validatedData = $request->validate([
-            '$request->title' => 'required|min:5',
-            '$request->user_id' => 'required',
-            '$request->description' =>'required'
-        ]);
-        
+            'title' => 'required|min:5',
+            'user_id' => 'required',
+            'description' =>'required|min:5'
+        ],['title.min'=> 'iti say please insert at least 5 characters for title',
+        'description.min'=> 'iti say please insert at least 5 characters for desc']);
+
         Post::create([
             'title' => $request->title,
             'description' =>  $request->description,
