@@ -7,12 +7,13 @@ use App\Http\Requests\PostRequest;
 use App\User;
 use App\Post;
 
+
+
 class PostController extends Controller
 {
     public function create()
     {
         $users = User::all();
-
         return view('posts.create', [
             'users' => $users
         ]);
@@ -21,8 +22,6 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         
-        // $validatedData = $request->validate([],[]);
-
         Post::create([
             'title' => $request->title,
             'description' =>  $request->description,
