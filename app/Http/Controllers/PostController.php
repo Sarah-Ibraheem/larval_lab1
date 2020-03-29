@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\User;
 use App\Post;
 
@@ -17,16 +18,10 @@ class PostController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(PostRequest $request)
     {
-        $request = request();
-
-        $validatedData = $request->validate([
-            'title' => 'required|min:5',
-            'user_id' => 'required',
-            'description' =>'required|min:5'
-        ],['title.min'=> 'iti say please insert at least 5 characters for title',
-        'description.min'=> 'iti say please insert at least 5 characters for desc']);
+        
+        // $validatedData = $request->validate([],[]);
 
         Post::create([
             'title' => $request->title,
