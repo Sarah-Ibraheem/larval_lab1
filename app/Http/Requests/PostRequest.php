@@ -25,16 +25,15 @@ class PostRequest extends FormRequest
     {
         return [
             
-                'title' => 'required|min:5',
-                'user_id' => 'required',
-                'description' =>'required|min:5'
+                'title' => 'required|min:3',
+                'description' =>'required|min:10',
             
         ];
     }
 
     public function messages()
     {
-        return['title.min'=> 'iti say please insert at least 5 characters for title',
-         'description.min'=> 'iti say please insert at least 5 characters for desc'];
+        return['title.min'=> 'please insert at least 5 characters for title',
+         'description.min'=> 'please insert at least 5 characters for desc'];
     }
 }
