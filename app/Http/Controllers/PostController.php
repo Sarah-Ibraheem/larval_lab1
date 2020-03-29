@@ -64,7 +64,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function update()
+    public function update(PostRequest $request)
     {
         $request = request();
         $postId = $request->post;
