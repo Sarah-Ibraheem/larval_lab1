@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('mainBlock')
 <div class="col-md-8 order-md-1">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
       <h4 class="mb-3">Create Post Form</h4>
       <form method="POST" action="{{route('posts.store')}}" class="needs-validation" novalidate>
       @csrf
