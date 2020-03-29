@@ -5,8 +5,6 @@
 
 <div class="row">
     <div class="col-lg-8">
-
-        <!-- the actual blog post: title/author/date/content -->
         <h1><a href="">{{$post->title}}</a></h1>
         <p class="lead"><i class="fa fa-user"></i> by <a href="">{{$post->user->name}}</a>
         </p>
@@ -17,7 +15,7 @@
             <p class="card-text">{{$post->description}}</p>
         </div>
         </div>
-        <p><i class="fa fa-calendar"></i> Posted on {{$post->created_at}}</p>
+        <p><i class="fa fa-calendar"></i> Posted on {{$post->created_at->format('M d Y')}}</p>
         <p><i class="fa fa-calendar"></i> updated on {{$post->updated_at}}</p>
 
      

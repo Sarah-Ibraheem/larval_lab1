@@ -17,18 +17,20 @@
                         <th scope="col">created_on</th>
                         <th scope="col">updated_at</th>
                         <th scope="col">Description</th>
+                        <th scope="col">slug</th>
                         <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
         @foreach ($posts as $post)
           <tr>
-                                <td>{{$post->id}}</td>
+                <td>{{$post->id}}</td>
 								<td>{{$post->title}}</td>
 								<td>{{$post->user->name}}</td>
-								<td>{{$post->created_at}}</td>
+								<td>{{$post->created_at->format('M d Y')}}</td>
 								<td>{{$post->updated_at}}</td>
 								<td>{{$post->description}}</td>
+                <td>{{$post->slug}}</td>
             <td>
               <a href="{{route('posts.show',['post' => $post->id])}}" class="btn btn-primary">details</a>
               <a href="{{route('posts.edit',['post'=>$post->id])}}" class="btn btn-success">update</a>
